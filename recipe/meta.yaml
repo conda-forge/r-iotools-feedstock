@@ -13,24 +13,22 @@ source:
   sha256: 27f4587f0fb46ccbf9120af45a5843ad6b967da44e47e860e93dd4af27f8001f
 
 build:
-  merge_build_host: true  # [win]
+  merge_build_host: True  # [win]
   number: 0
-  skip: true  # [win32]
   rpaths:
     - lib/R/lib/
     - lib/
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('c') }}              # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
     - {{ posix }}filesystem        # [win]
     - {{ posix }}make
-    - {{ posix }}sed  # [win]
-    - {{ posix }}coreutils  # [win]
     - {{ posix }}sed               # [win]
     - {{ posix }}coreutils         # [win]
     - {{ posix }}zip               # [win]
+    - cross-r-base {{ r_base }}    # [build_platform != target_platform]
   host:
     - r-base
   run:
@@ -44,10 +42,12 @@ test:
 
 about:
   home: http://www.rforge.net/iotools
-  license: GPL-2 | GPL-3
+  license: GPL-2.0-or-later
   summary: Basic I/O tools for streaming and data parsing.
   license_family: GPL3
-  license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+  license_file:
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-2
+    . {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
 
 extra:
   recipe-maintainers:
