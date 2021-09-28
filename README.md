@@ -3,7 +3,7 @@ About r-iotools
 
 Home: http://www.rforge.net/iotools
 
-Package license: GPL-2 | GPL-3
+Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-iotools-feedstock/blob/master/LICENSE.txt)
 
