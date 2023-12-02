@@ -1,4 +1,4 @@
-{% set version = "0.3-2" %}
+{% set version = "0.3-5" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,11 +10,11 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/iotools_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/iotools/iotools_{{ version }}.tar.gz
-  sha256: 27f4587f0fb46ccbf9120af45a5843ad6b967da44e47e860e93dd4af27f8001f
+  sha256: 9cf917ca6bf779b527462f127cd02e3da9624c1ea68a6555d74572a5c270b48b
 
 build:
-  merge_build_host: True  # [win]
-  number: 2
+  merge_build_host: true  # [win]
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
