@@ -1,4 +1,4 @@
-{% set version = "0.4-0" %}
+{% set version = "0.4-0.1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/iotools_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/iotools/iotools_{{ version }}.tar.gz
-  sha256: b7ae26da23d7631a3554ede80a959164480df93abafbe6c88baa337a8afef911
+  sha256: b7b7610e1a5e4e02ba261bbf895eadb70c535fcc68ace70099be27fa062f4ab2
 
 build:
   number: 0
